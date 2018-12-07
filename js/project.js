@@ -30,8 +30,7 @@ function searchableMenu() {
 function setTheme() {
 
     /*Set Profile Picture*/
-    var fileName = location.href.split("/").slice(-1);
-    if(fileName != "index.html" && fileName != "login.html" && fileName != "createUser.html"){
+    if(localStorage.getItem("ProfilePic")){
       var imgURL = localStorage.getItem("ProfilePic");
       document.getElementById("profileThumbnail").src = imgURL;
     }
@@ -39,13 +38,14 @@ function setTheme() {
     var arrows = $('.dropArrow');
 
     if(theme=="classic") {
-      document.documentElement.style.setProperty('--bg-color', '#39B6FF');
-      document.documentElement.style.setProperty('--grd-color', '#299BDF');
-      document.documentElement.style.setProperty('--clk-color', '#2678A9');
+      document.documentElement.style.setProperty('--bg-color', '#4B7498');
+      document.documentElement.style.setProperty('--grd-color', '#4D6B85');
+      document.documentElement.style.setProperty('--clk-color', '#406280');
       document.documentElement.style.setProperty('--pg-color', 'white');
       document.documentElement.style.setProperty('--txt-color', 'black');
       document.documentElement.style.setProperty('--sec-txt-color', 'black');
-      document.documentElement.style.setProperty('--hvr-color', '#BAE5FF');
+      document.documentElement.style.setProperty('--hvr-color', '#5E88AD');
+
       try {
       for(i in arrows)
         arrows[i].style.filter = "invert(0)";
